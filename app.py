@@ -13,9 +13,16 @@ def connect_db(db, sqlcommand):
     return jsonify([dict(r) for r in table])
 
 @app.route('/api/restaurants')
-def get_flight_data():
+def get_restaurant_data():
     try:
         rows = connect_db('restaurants.db', 'SELECT * FROM restaurants')
         return rows
     except Exception as e:
         return jsonify({'error': 'Could not retrieve restaurants', 'details': str(e)}), 500
+
+@app.route('/')
+def index():
+    return render_template('restaurants.html')
+
+if __name__ == '__main__':
+    app.run(debug=True)
