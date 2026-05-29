@@ -24,5 +24,9 @@ def get_restaurant_data():
 def index():
     return render_template('restaurants.html')
 
+@app.route('/ontherocs')
+def ontherocs():
+    return render_template('ontherocs.html')
+
 if __name__ == '__main__':
     app.run(debug=True)
