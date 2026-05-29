@@ -13,3 +13,19 @@ Expected finish date: 06/02/2026
 Finish date: 05/29/2026
 
 Notes: Website is extremely basic. Only has a hardcoded HTML list of two restaurants in the Greater Rochester International Airport, as I am figuring out how HTML lists work. There is one added page with a menu to one restaurant, with the date and source of the menu.
+
+Version 1.1.0 - Database
+
+Put list of restaurants in a database
+
+This is how the initial database is laid out:
+
+Airport Restaurant Database
+    Restaurants
+        Name
+        Location (Text)
+        Opening Hours (Text)
+        Link to Menu
+
+Start date: 5/29/2026
+Expected finish date: 05/30/2026
