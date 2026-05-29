@@ -10,3 +10,6 @@ Shows a list of dining locations, their locations in the airport, their opening/
 
 Start date: 05/29/2026
 Expected finish date: 06/02/2026
+Finish date: 05/29/2026
+
+Notes: Website is extremely basic. Only has a hardcoded HTML list of two restaurants in the Greater Rochester International Airport, as I am figuring out how HTML lists work. There is one added page with a menu to one restaurant, with the date and source of the menu.
