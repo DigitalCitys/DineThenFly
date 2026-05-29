@@ -1,0 +1,12 @@
+DineThenFly by Giulia Spier
+
+A mobile app that shows users a list of an airport's dining locations, their locations, and their menus.
+
+The purpose of DineThenFly is to make it easier for airport goers to purchase food before their flights, especially in larger airports.
+
+Version 1.0.0 - Basic Information
+
+Shows a list of dining locations, their locations in the airport, their opening/closing times (depending on the day of the week) and their menus. If the restaurant is a chain (McDonalds, Starbucks, etc.), the user shall be redirected to the chain's website.
+
+Start date: 05/29/2026
+Expected finish date: 06/02/2026
