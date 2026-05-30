@@ -33,9 +33,17 @@ def index():
 #         return jsonify({'error': 'Could not retrieve menu items', 'details': str(e)}), 500
 
 @app.route('/api/ontherocsmenu')
-def get_menu_data():
+def get_ontherocs_menu_data():
     try:
         rows = connect_db('menus.db', 'SELECT * FROM ontherocs ORDER BY category')
+        return rows
+    except Exception as e:
+        return jsonify({'error': 'Could not retrieve menu items', 'details': str(e)}), 500
+
+@app.route('/api/menus/tasteofrochester')
+def get_tasteofrochester_menu_data():
+    try:
+        rows = connect_db('menus.db', 'SELECT * FROM tasteofrochester ORDER BY category')
         return rows
     except Exception as e:
         return jsonify({'error': 'Could not retrieve menu items', 'details': str(e)}), 500
@@ -43,6 +51,10 @@ def get_menu_data():
 @app.route('/ontherocs')
 def ontherocs():
     return render_template('ontherocs.html')
+
+@app.route('/tasteofrochester')
+def tasteofrochester():
+    return render_template('tasteofrochester.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
