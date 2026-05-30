@@ -1,0 +1,34 @@
+function menuItems(path)
+{
+    fetch(path)
+        .then(response => response.json())
+        .then(menu => {
+            const groupedByCategory = {}; // This is a list of categories
+            for (const item of menu) { // Iterates over each menu item
+                if (!groupedByCategory[item.category]) //Checks if a category does not exist. groupedByCategory[item.category] is an entry named after a category (for example: All Day Breakfast)
+                    groupedByCategory[item.category] = []; // Makes an array for a category that does not exist
+                groupedByCategory[item.category].push(item); // Adds item to correct entry
+            }
+            console.log(groupedByCategory);
+
+            const htmlMenu = document.querySelector('#menuitems'); // Like getElementById, but for CSS selectors instead of just IDs.
+
+            for (const category in groupedByCategory) { // Iterates over each category
+                // Add category
+                const htmlCategory = document.createElement('h3');
+                htmlCategory.textContent = category; // Adds the text to the header
+                htmlMenu.appendChild(htmlCategory); // Adds the header to the webpage
+
+                // Add item to category
+                for (const item of groupedByCategory[category]) { // Iterates over all food items in a category
+                    const htmlMenuItem = document.createElement('li');
+                    htmlMenuItem.classList.add('menuitem'); // Assigns the row to a class
+                    htmlMenuItem.innerHTML = `
+                                <p>${item.name}</p>
+                                <p>$${item.price}</p>
+                            `;
+                    htmlMenu.appendChild(htmlMenuItem); // Adds menu item to webpage
+                }
+            }
+    });
+}
