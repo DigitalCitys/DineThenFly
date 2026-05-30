@@ -32,3 +32,12 @@ Expected finish date: 05/30/2026
 Actual finish date: 05/29/2026
 
 List of restaurants is shown in database, and link to On the ROCs menu works. However, the menu to On the ROCs is hardcoded in HTML.
+
+Version 1.2.0 - Menu Database
+
+Put each restaurant's menu in a database, and display it on the menu page.
+
+Each menu item has a name and a category
+
+Start date: 5/30/2026
+Expected finish date: 06/01/2026
