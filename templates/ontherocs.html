@@ -22,30 +22,31 @@
             .then(menu => {
                 const groupedByCategory = {}; // This is a list of categories
                 for (const item of menu) { // Iterates over each menu item
-                    if (!groupedByCategory[item.category]) //groupedByCategory[item.category] is an entry named after a category (for example: All Day Breakfast)
+                    if (!groupedByCategory[item.category]) //Checks if a category does not exist. groupedByCategory[item.category] is an entry named after a category (for example: All Day Breakfast)
                         groupedByCategory[item.category] = []; // Makes an array for a category that does not exist
                     groupedByCategory[item.category].push(item); // Adds item to correct entry
                 }
-                console.log(groupedByCategory);
+                // console.log(groupedByCategory);
+
+                const menuSection = document.querySelector('#menuitems'); // Like getElementById, but for CSS selectors instead of just IDs.
+
+                for (const category in groupedByCategory) { // Iterates over each category
+                    // Add category
+                    const header = document.createElement('h3');
+                    header.textContent = category; // Adds the text to the header
+                    menuSection.appendChild(header); // Adds the header to the webpage
+
+                    // Add item to category
+                    for (const item of groupedByCategory[category]) { // Iterates over all food items in a category
+                        const li = document.createElement('li');
+                        li.innerHTML = `
+                            <p>${item.name}</p>
+                            <p>$${item.price}</p>
+                        `;
+                        menuSection.appendChild(li); // Adds menu item to webpage
+                    }
+                }
             });
     </script>
-<!--    <script>-->
-<!--        fetch('http://127.0.0.1:5000/api/ontherocsmenu')-->
-<!--            .then(response => response.json())-->
-<!--            .then(menu => {-->
-<!--                const menuitemlist = document.getElementById('menuitems'); // Finds empty tbody in HTML by id-->
-<!--                for(var i = 0; i < menu.length; i++)-->
-<!--                {-->
-<!--                    const menuitem = document.createElement('li');-->
-<!--                    menuitem.classList.add('menuitem');-->
-<!--                    menuitem.innerHTML = `-->
-<!--                <p>${menu[i].name}</p>-->
-<!--                <p>${menu[i].category}</p>-->
-<!--                <p>$${menu[i].price}</p>-->
-<!--            `;-->
-<!--                    menuitemlist.appendChild(menuitem);-->
-<!--                }-->
-<!--            })-->
-<!--    </script>-->
 </body>
 </html>
