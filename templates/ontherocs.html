@@ -28,22 +28,22 @@
                 }
                 console.log(groupedByCategory);
 
-                const menuSection = document.querySelector('#menuitems'); // Like getElementById, but for CSS selectors instead of just IDs.
+                const htmlMenu = document.querySelector('#menuitems'); // Like getElementById, but for CSS selectors instead of just IDs.
 
                 for (const category in groupedByCategory) { // Iterates over each category
                     // Add category
-                    const header = document.createElement('h3');
-                    header.textContent = category; // Adds the text to the header
-                    menuSection.appendChild(header); // Adds the header to the webpage
+                    const htmlCategory = document.createElement('h3');
+                    htmlCategory.textContent = category; // Adds the text to the header
+                    htmlMenu.appendChild(htmlCategory); // Adds the header to the webpage
 
                     // Add item to category
                     for (const item of groupedByCategory[category]) { // Iterates over all food items in a category
-                        const li = document.createElement('li');
-                        li.innerHTML = `
+                        const htmlMenuItem = document.createElement('li');
+                        htmlMenuItem.innerHTML = `
                             <p>${item.name}</p>
                             <p>$${item.price}</p>
                         `;
-                        menuSection.appendChild(li); // Adds menu item to webpage
+                        htmlMenu.appendChild(htmlMenuItem); // Adds menu item to webpage
                     }
                 }
             });
