@@ -24,10 +24,18 @@ def get_restaurant_data():
 def index():
     return render_template('restaurants.html')
 
+# @app.route('/api/ontherocsmenu')
+# def get_menu_data():
+#     try:
+#         rows = connect_db('ontherocsmenu.db', 'SELECT * FROM menu ORDER BY category')
+#         return rows
+#     except Exception as e:
+#         return jsonify({'error': 'Could not retrieve menu items', 'details': str(e)}), 500
+
 @app.route('/api/ontherocsmenu')
 def get_menu_data():
     try:
-        rows = connect_db('ontherocsmenu.db', 'SELECT * FROM menu ORDER BY category')
+        rows = connect_db('menus.db', 'SELECT * FROM ontherocs ORDER BY category')
         return rows
     except Exception as e:
         return jsonify({'error': 'Could not retrieve menu items', 'details': str(e)}), 500
