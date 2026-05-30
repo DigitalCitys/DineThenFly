@@ -57,4 +57,4 @@ def tasteofrochester():
     return render_template('tasteofrochester.html')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, use_reloader=False) # use_reloader=False prevents the Flask server from restarting every time the page is updated
