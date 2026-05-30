@@ -32,7 +32,7 @@ def index():
 #     except Exception as e:
 #         return jsonify({'error': 'Could not retrieve menu items', 'details': str(e)}), 500
 
-@app.route('/api/ontherocsmenu')
+@app.route('/api/menus/ontherocs')
 def get_ontherocs_menu_data():
     try:
         rows = connect_db('menus.db', 'SELECT * FROM ontherocs ORDER BY category')
