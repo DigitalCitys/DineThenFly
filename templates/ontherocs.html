@@ -9,66 +9,87 @@
     <section id="headerofsite">
         <h1>DineThenFly</h1>
     </section>
-    <section id="menu">
+    <section>
         <h2>On the ROCs - Menu</h2>
         <p>Source: Yelp photo from Jeff P. Up to date as of 4/14/2023</p>
-        <h3>All Day Breakfast</h3>
-        <ul>
-            <li>
-                Chicken and Waffles
-            </li>
-            <li>
-                Bacon, Egg, and Cheese Bagel
-            </li>
-            <li>
-                Breakfast Burrito
-            </li>
-            <li>
-                Fresh brewed coffee
-            </li>
-            </ul>
-        <h3>Sports Bar Favorites</h3>
-        <ul>
-            <li>
-                Chicken Quesadilla
-            </li>
-            <li>
-                Loaded Nachos
-            </li>
-            <li>
-                Bavarian Pretzels
-            </li>
-            <li>
-                Chicken Tenders
-            </li>
-        </ul>
-        <h3>Sandwiches</h3>
-        <ul>
-            <li>
-                Cheeseburger
-            </li>
-            <li>
-                BBQ Sandwich
-            </li>
-            <li>
-                Burrito
-            </li>
-            <li>
-                The Rachel
-            </li>
-            <li>
-                Turkey Club
-            </li>
-            <li>
-                Beef on Wick
-            </li>
-            </ul>
-        <h3>Salads</h3>
-        <ul>
-            <li>
-                Grilled Chicken Caesar
-            </li>
+<!--        <h3>All Day Breakfast</h3>-->
+<!--        <ul>-->
+<!--            <li>-->
+<!--                Chicken and Waffles-->
+<!--            </li>-->
+<!--            <li>-->
+<!--                Bacon, Egg, and Cheese Bagel-->
+<!--            </li>-->
+<!--            <li>-->
+<!--                Breakfast Burrito-->
+<!--            </li>-->
+<!--            <li>-->
+<!--                Fresh brewed coffee-->
+<!--            </li>-->
+<!--            </ul>-->
+<!--        <h3>Sports Bar Favorites</h3>-->
+<!--        <ul>-->
+<!--            <li>-->
+<!--                Chicken Quesadilla-->
+<!--            </li>-->
+<!--            <li>-->
+<!--                Loaded Nachos-->
+<!--            </li>-->
+<!--            <li>-->
+<!--                Bavarian Pretzels-->
+<!--            </li>-->
+<!--            <li>-->
+<!--                Chicken Tenders-->
+<!--            </li>-->
+<!--        </ul>-->
+<!--        <h3>Sandwiches</h3>-->
+<!--        <ul>-->
+<!--            <li>-->
+<!--                Cheeseburger-->
+<!--            </li>-->
+<!--            <li>-->
+<!--                BBQ Sandwich-->
+<!--            </li>-->
+<!--            <li>-->
+<!--                Burrito-->
+<!--            </li>-->
+<!--            <li>-->
+<!--                The Rachel-->
+<!--            </li>-->
+<!--            <li>-->
+<!--                Turkey Club-->
+<!--            </li>-->
+<!--            <li>-->
+<!--                Beef on Wick-->
+<!--            </li>-->
+<!--            </ul>-->
+<!--        <h3>Salads</h3>-->
+<!--        <ul>-->
+<!--            <li>-->
+<!--                Grilled Chicken Caesar-->
+<!--            </li>-->
+<!--        </ul>-->
+        <ul id="menuitems">
+
         </ul>
     </section>
+    <script>
+        fetch('http://127.0.0.1:5000/api/ontherocsmenu')
+            .then(response => response.json())
+            .then(menu => {
+                const menuitemlist = document.getElementById('menuitems'); // Finds empty tbody in HTML by id
+                for(var i = 0; i < menu.length; i++)
+                {
+                    const menuitem = document.createElement('li');
+                    menuitem.classList.add('menuitem');
+                    menuitem.innerHTML = `
+                <p>${menu[i].name}</p>
+                <p>${menu[i].category}</p>
+                <p>$${menu[i].price}</p>
+            `;
+                    menuitemlist.appendChild(menuitem);
+                }
+            })
+    </script>
 </body>
 </html>
