@@ -16,17 +16,20 @@ ul
 {
     background-color: #e1e7f9;
     list-style: none;
+    padding-left: 0;
 }
 
 h3
 {
     background-color: #91adec;
     font-size: 4em;
+    padding-left: 0.5em;
 }
 
 p
 {
-    font-size: 2em;
+    font-size: 3em;
+    padding-left: 0.5em;
 }
 
 a
@@ -37,4 +40,5 @@ a
     font-size: 3em;
     padding: 15px;
     border-radius: 20px;
+    margin-left: 0.5em;
 }
