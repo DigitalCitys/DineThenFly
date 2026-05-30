@@ -44,3 +44,10 @@ Expected finish date: 06/01/2026
 Actual finish date: 05/30/2026
 
 Notes: Implemented with assistance from Claude.
+
+Version 1.2.5 - Graphical Upgrade and Simplification
+
+Added CSS styling, and also made a helper function for displaying the DB data. I did not intend on making this update in advance. Oops haha
+
+Start date: 05/30/2026
+Finish date: 05/30/2026
