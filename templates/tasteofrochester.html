@@ -9,15 +9,16 @@
     <section id="headerofsite">
         <h1>DineThenFly</h1>
     </section>
-    <section>
-        <h2>Taste of Rochester - Menu</h2>
-        <p>Source: Google restaurant menu photo from Ezra Rubi. Circa 2020</p>
+    <script src="../static/menuitemhelperfunction.js">
+    </script>
+    <section id="menubody">
+        <script>
+            restaurantTitle('Taste of Rochester', 'Google restaurant menu photo from Ezra Rubi. Circa 2020');
+        </script>
         <ul id="menuitems">
 
         </ul>
     </section>
-    <script src="../static/menuitemhelperfunction.js">
-    </script>
     <script>
         menuItems('http://127.0.0.1:5000/api/menus/tasteofrochester');
     </script>

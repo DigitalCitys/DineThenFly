@@ -1,3 +1,21 @@
+function restaurantTitle(name, source)
+{
+    // <section>
+    //     <h2>On the ROCs - Menu</h2>
+    //     <p>Source: Yelp photo from Jeff P. Up to date as of 4/14/2023</p>
+    //     <ul id="menuitems">
+    //
+    //     </ul>
+    // </section>
+    const section = document.querySelector('#menubody');
+    // section.classList.add('menuitem'); // Assigns the row to a class
+    section.innerHTML = `
+                                <h2>${name} - Menu</h2>
+                                <p>Source: ${source}</p>
+                                <ul id="menuitems"></ul>
+                            `;
+}
+
 function menuItems(path)
 {
     fetch(path)

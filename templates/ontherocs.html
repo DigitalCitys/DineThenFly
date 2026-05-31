@@ -9,15 +9,16 @@
     <section id="headerofsite">
         <h1>DineThenFly</h1>
     </section>
-    <section>
-        <h2>On the ROCs - Menu</h2>
-        <p>Source: Yelp photo from Jeff P. Up to date as of 4/14/2023</p>
+    <script src="../static/menuitemhelperfunction.js">
+    </script>
+    <section id="menubody">
+        <script>
+            restaurantTitle('On the ROCs', 'Yelp photo from Jeff P. Up to date as of 4/14/2023');
+        </script>
         <ul id="menuitems">
 
         </ul>
     </section>
-    <script src="../static/menuitemhelperfunction.js">
-    </script>
     <script>
         menuItems('http://127.0.0.1:5000/api/menus/ontherocs');
     </script>
