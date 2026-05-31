@@ -59,4 +59,8 @@ Finish date: 05/31/2026
 
 Added a helper function for making a page display the restaurant name, and (mostly) finished the Taste of Rochester menu.
 
-Features to consider: Display allergens (very important feature)
+Features to consider:
+    - Display allergens (very important feature)
+    - Icons to improve usability
+    - Website logo
+    - Restaurant logos displayed for usability and recognition
