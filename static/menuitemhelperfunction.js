@@ -7,6 +7,11 @@ function restaurantTitle(name, source)
     //
     //     </ul>
     // </section>
+    const title = document.querySelector('title');
+    title.innerHTML = `
+                                DineThenFly - ${name} Menu
+                            `;
+
     const section = document.querySelector('#menubody');
     // section.classList.add('menuitem'); // Assigns the row to a class
     section.innerHTML = `
