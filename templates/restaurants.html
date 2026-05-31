@@ -11,19 +11,38 @@
 </section>
 <section id="restaurants">
     <h2>Greater Rochester International Airport</h2>
-    <ul>
-        <li>
-            <h3>Dunkin'</h3>
-            <p>Post-security, main food court</p>
-            <p>4:30am-7pm daily</p>
-            <a href="https://www.dunkindonuts.com/en/menu">Menu</a>
-        </li>
-        <li>
-            <h3>On the ROCs</h3>
-            <p>Post-security, near Concourse B</p>
-            <p>10am-7pm Daily</p>
-            <a href="ontherocs.html">Menu</a>
-        </li>
+    <ul id="listofrestaurants">
+<!--        <li>-->
+<!--            <h3>Dunkin'</h3>-->
+<!--            <p>Post-security, main food court</p>-->
+<!--            <p>4:30am-7pm daily</p>-->
+<!--            <a href="https://www.dunkindonuts.com/en/menu">Menu</a>-->
+<!--        </li>-->
+<!--        <li>-->
+<!--            <h3>On the ROCs</h3>-->
+<!--            <p>Post-security, near Concourse B</p>-->
+<!--            <p>10am-7pm Daily</p>-->
+<!--            <a href="ontherocs.html">Menu</a>-->
+<!--        </li>-->
     </ul>
 </section>
+<script>
+    fetch('http://127.0.0.1:5000/api/restaurants')
+    .then(response => response.json())
+    .then(restaurants => {
+        const restaurantlist = document.getElementById('listofrestaurants'); // Finds empty tbody in HTML by id
+        for(var i = 0; i < restaurants.length; i++)
+        {
+            const restaurant = document.createElement('li');
+            restaurant.classList.add('restaurant');
+            restaurant.innerHTML = `
+                <h3>${restaurants[i].name}</h3>
+                <p>${restaurants[i].location}</p>
+                <p>${restaurants[i].times}</p>
+                <a href="${restaurants[i].menulink}">Menu</a>
+            `;
+            restaurantlist.appendChild(restaurant);
+        }
+    })
+</script>
 </body>
