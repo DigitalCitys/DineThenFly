@@ -51,3 +51,9 @@ Added CSS styling, and also made a helper function for displaying the DB data. I
 
 Start date: 05/30/2026
 Finish date: 05/30/2026
+
+Version 1.2.7 - Helper Functions
+
+Added a helper function for making a page display the restaurant name, and (mostly) finished the Taste of Rochester menu.
+
+Features to consider: Display allergens (very important feature)
